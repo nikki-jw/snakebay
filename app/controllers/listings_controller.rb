@@ -6,7 +6,6 @@ class ListingsController < ApplicationController
     end
 
     def show
-
     end
 
     def new
@@ -27,16 +26,22 @@ class ListingsController < ApplicationController
 
     def edit
         set_breeds_and_sexes
-        @listing = Listing.new
     end
 
     def update
-        #finsih logic for updating the record
+        @listing = Listing.update(params["id"], listing_params)
+        puts @listing
+        if @listing.errors.any?
+            set_breeds_and_sexes
+            render "edit"
+        else 
+            redirect_to listings_path
+        end
     end
 
     def destroy
-        
-        #finish logic for deleting the record
+        Listing.find(params[:id]).destroy
+        redirect_to listings_path
     end
 
     private

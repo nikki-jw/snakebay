@@ -15,3 +15,9 @@
  */
 
 
+.errors {
+    border: 2px solid red;
+    color: red;
+    width: 200px;
+    border-top: 10px solid red;
+}

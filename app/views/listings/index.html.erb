@@ -1,6 +1,15 @@
+<h1>Snakes for sale</h1>
+
+<div class="listings">
 <%  for listing in @listings %>
-    <li>
-        <%= link_to listing.title, listing_path(listing.id)%>
+    <div class="listing">
         <%= image_tag listing.picture if listing.picture.attached? %>
-    </li>
+        <div class="info">
+            <%= link_to listing.title, listing_path(listing.id)%>
+        </div>
+        <%= form_with model: listing, local: true, method: "delete" do |form| %>
+            <%= submit_tag "x", class: "delete-icon" %>
+        <% end %>
+    </div>
 <% end %>
+</div>

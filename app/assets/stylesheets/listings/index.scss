@@ -1,0 +1,42 @@
+img {
+    width: 200px;
+}
+
+.listings {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 100px 0px 100px;
+}
+
+.listing {
+    border-radius: 20px;
+    box-shadow: 1px 1px 7px lightgrey;
+    width: 200px;
+    position: relative;
+}
+
+img {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.info {
+    padding: 10px;
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+    }
+}
+
+.delete-icon {
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    font-size: 25px;
+    top: 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px white;
+
+ 
+}

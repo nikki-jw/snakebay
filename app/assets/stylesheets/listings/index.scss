@@ -26,17 +26,29 @@ img {
         color: black;
         font-size: 25px;
     }
+    
+    .info-bar {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: darkgrey;
+    }
 }
 
-.delete-icon {
-    color: red;
-    font-weight: bold;
+.modify-icons {
     position: absolute;
     right: 10px;
-    font-size: 25px;
-    top: 10px;
-    cursor: pointer;
-    text-shadow: 1px 1px 1px white;
+    bottom: 10px;
+    .icon {
+        color: red;
 
- 
+        font-size: 12px;
+        text-decoration: underline;
+        cursor: pointer;
+        text-shadow: 1px 1px 1px white;
+        background: none;
+        border: none;
+        font-family: "Time New Roman"
+    }
+
 }

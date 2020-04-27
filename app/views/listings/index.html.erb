@@ -5,10 +5,21 @@
     <div class="listing">
         <%= image_tag listing.picture if listing.picture.attached? %>
         <div class="info">
+            <div class="info-bar">
+                <div>$<%= listing.price%></div>
+                <div><%= listing.sex%></div>
+                <div><%= listing.date_of_birth%></div>
+            </div>
             <%= link_to listing.title, listing_path(listing.id)%>
+            <div><%= listing.description %></div>
+                        <br/>
+
         </div>
         <%= form_with model: listing, local: true, method: "delete" do |form| %>
-            <%= submit_tag "x", class: "delete-icon" %>
+        <div class="modify-icons">
+            <%= submit_tag "delete", class: "icon" %>
+            <%= link_to "edit", edit_listing_path(listing.id), class: "icon" %>
+        </div>
         <% end %>
     </div>
 <% end %>

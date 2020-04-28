@@ -15,11 +15,14 @@
                         <br/>
 
         </div>
-        <%= form_with model: listing, local: true, method: "delete" do |form| %>
-        <div class="modify-icons">
-            <%= submit_tag "delete", class: "icon" %>
-            <%= link_to "edit", edit_listing_path(listing.id), class: "icon" %>
-        </div>
+
+        <% if current_user.id == listing.id%>
+            <%= form_with model: listing, local: true, method: "delete" do |form| %>
+                <div class="modify-icons">
+                    <%= submit_tag "delete", class: "icon" %>
+                    <%= link_to "edit", edit_listing_path(listing.id), class: "icon" %>
+                </div>
+            <% end %>
         <% end %>
     </div>
 <% end %>

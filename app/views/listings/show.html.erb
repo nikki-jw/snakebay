@@ -1,4 +1,4 @@
 <%= @listing.title %>
-<% if current_user.id == @listing.id%>
+<% if current_user.id == @listing.user_id%>
     <%= link_to "edit", edit_listing_path(@listing.id) %>
 <% end %>
